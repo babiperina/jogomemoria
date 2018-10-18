@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -13,7 +12,14 @@ public class Grupo {
 
     private String nome;
 
-    private List<Imagem> imagens;
+    private List<Imagem> imagens = new ArrayList<Imagem>();
+
+
+    public Grupo(){}
+
+    public Grupo(String nome){
+        this.nome = nome;
+    }
 
     public Grupo(int id, String nome, List<Imagem> imagens) {
         this.id = id;
@@ -43,5 +49,10 @@ public class Grupo {
 
     public void setImagens(List<Imagem> imagens) {
         this.imagens = imagens;
+    }
+
+    public void addImagem(String nome) {
+        Imagem imagem = new Imagem(nome,"");
+        this.imagens.add(imagem);
     }
 }
